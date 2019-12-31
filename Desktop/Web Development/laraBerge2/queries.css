@@ -1,0 +1,15 @@
+@media(max-width:1100px){
+    #main-nav ul {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .logo-container{
+        display: none;
+    }
+
+    #contactForm form{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

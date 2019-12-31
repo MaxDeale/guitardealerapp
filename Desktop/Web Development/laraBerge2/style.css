@@ -1,0 +1,389 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: "Nunito";
+}
+
+body {
+    font-family: "Nunito";
+}
+
+/* NAVBAR */
+
+#main-header #main-nav .logo-container img {
+    width: 180px;
+    height: 180px;
+}
+
+#logo-container img{
+    width: 180px;
+    height: 180px;
+}
+
+.logo-container {
+    margin-left: 10%;
+}
+
+#main-nav {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px black solid;
+    position: sticky;
+    font-family: 'ZCOOL XiaoWei', serif;
+}
+
+
+#main-nav ul {
+    display: flex;
+    margin-right: 100px;
+}
+
+#main-nav ul li {
+    padding: 0 30px;
+    list-style: none;
+    font-size: 1.5rem;
+
+}
+
+#main-nav ul li a:hover {
+    border-bottom: 3px solid purple;
+    transition: all 1s;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    font-size: 1.6rem;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+}
+
+
+/* HOME */
+
+#home-a {
+    background-image: url(IMG/balloon.jpg);
+    background-blend-mode: lighten;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 400px;
+
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.itemContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    background: black;
+}
+
+
+
+
+/* ABOUT */
+
+
+#aboutImg {
+    border: 2px solid black;
+    margin-bottom: 5%;
+}
+
+.section-title {
+    text-align: center;
+    padding: 2rem;
+    font-size: 2.5rem;
+    color: purple;
+}
+
+
+.profileText {
+    border-top: 4px solid purple;
+    padding: 4rem;
+    font-family: "nunito";
+    font-size: 17px;
+    width: 800px;
+}
+
+.bio {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.bio h4 {
+    padding-top: 2%;
+}
+
+#profile {
+    border-radius: 50%;
+    border: solid black 3px;
+}
+
+/* FOOTER */
+
+#main-footer {
+    background: lightgrey;
+    height: 250px;
+    font-family: "fantasy";
+    color: black;
+
+}
+
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem;
+}
+
+.footer-item {
+    text-align: center;
+    padding: 1rem;
+
+}
+
+.footer-item i {
+    color: purple;
+}
+
+.footer-item i:hover {
+    transition: all 1s;
+    padding-bottom: 25px;
+    transition-duration: 2s;
+    transform: rotate(360deg);
+}
+
+.footer-item h2,
+p,
+i {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-family: 'ZCOOL XiaoWei', serif;
+    letter-spacing: 1.5px;
+}
+
+/* GALLERY */
+
+#gallery {
+    width: 100%;
+    background: darkgrey;
+    height: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+
+}
+
+#smallGallery {
+    width: 467px;
+    height: 1000px;
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(1fr, 1fr, 1fr);
+    border-right: darkmagenta 3px solid;
+    overflow: hidden;
+    background-attachment: fixed;
+    align-items: center;
+
+}
+
+#galleryDisplay {
+    margin-left: 35%;
+}
+
+#mainDisplay {
+    margin-top: 10px;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.galleryItem {
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+}
+
+.galleryItem:hover {
+    opacity: 0.7;
+}
+
+/* CONTACT */
+
+.contactContainer {
+    height: 1000px;
+
+}
+
+.contactContainer div {
+    display: flex;
+}
+
+#contactPic {
+    height: 500px;
+    margin: 0 auto;
+    justify-self: center;
+    border: 2px solid black;
+    margin-bottom: 2%;
+}
+
+#contactForm {
+    width: 40%;
+    padding: 2rem;
+    background: darkgrey;
+    display: grid;
+    border: 2px solid black;
+    overflow: hidden;
+    justify-items: center;
+    justify-self: center;
+    margin-left: 30%;
+}
+
+#contactForm input {
+    height: 45px;
+    border: 1px solid purple;
+    margin-left: 6%;
+    padding: 5px;
+}
+
+#contactForm button {
+    height: 30px;
+    width: 100px;
+    border: 3px solid purple;
+    border-radius: 20px;
+    font-family: "nunito";
+}
+
+#contactForm button:hover {
+    height: 30px;
+    width: 100px;
+    background: purple;
+    border: 3px solid black;
+    color: white;
+    border-radius: 20px;
+    font-family: "nunito";
+
+}
+
+#message {
+    margin: 1rem;
+    border: 1px solid purple;
+}
+
+/* UTILITIES */
+
+.nav-container {
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.container {
+    width: 100%;
+
+    display: grid;
+
+
+}
+
+.container-main {
+    width: 80%;
+    justify-self: center;
+    text-align: center;
+
+}
+
+.mainTitle {
+    font-size: 3rem;
+    font-family: "ZCOOL XiaoWei";
+    margin-bottom: 3rem;
+
+}
+
+.btn-primary {
+    border-style: none;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-family: "Nunito";
+    background: purple;
+    border-radius: 3px;
+    color: white;
+    font-size: 1rem;
+    border: 1px solid black;
+
+}
+
+.btn-primary:hover {
+    background: lightgray;
+    color: black;
+    transition: all 1.3s;
+
+}
+
+
+.py-1 {
+    padding: 1rem 0;
+}
+
+.py-2 {
+    padding: 2rem 0;
+}
+
+.py-3 {
+    padding: 3rem 0;
+}
+
+.py-4 {
+    padding: 4rem 0;
+}
+
+.py-5 {
+    padding: 5rem 0;
+}
+
+.my-1 {
+    margin: 1rem 0;
+}
+
+.my-2 {
+    margin: 2rem 0;
+}
+
+.my-3 {
+    margin: 3rem 0;
+}
+
+.my-4 {
+    margin: 4rem 0;
+}
+
+.my-5 {
+    margin: 5rem 0;
+}
+
+.pt-10 {
+    padding: 10rem 0;
+}

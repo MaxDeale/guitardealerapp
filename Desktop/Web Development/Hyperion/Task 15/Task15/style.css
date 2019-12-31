@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(212, 192, 154);
+
+}
+
+
+/* NAVBAR */
+
+#mainNav {
+    background: #e3b04b;
+    display: flex;
+    max-width: 100%;
+}
+
+#mainNav ul {
+    display: flex;
+    justify-self: flex-end;
+    align-items: center;
+
+}
+
+#mainNav ul li {
+    padding: 0 20px;
+    list-style: none;
+    justify-self: center;
+}
+
+#mainNav ul li a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    color: black;
+    text-decoration: none;
+    font-family: "mclaren";
+}
+
+#mainNav ul li a:hover {
+    color: white;
+}
+
+#mainHeader {
+    display: block;
+    /* background-image: url(https://images.unsplash.com/photo-1487202212798-4f11d5c8f57d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); */
+    background-image: url(https://images.unsplash.com/photo-1502027566796-ed21d1abd7fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: soft-light;
+}
+
+.logoContainer {
+    display: flex;
+}
+
+.logoContainer2 {
+    display: flex;
+}
+
+.logoContainer2 img {
+    margin-left: 50px;
+    width: 300px;
+}
+
+.logo {
+    height: 250px;
+    width: 250px;
+    border-radius: 60%;
+    align-self: center;
+    justify-self: center;
+    margin-left: 100px;
+    border-radius: 50%;
+    border: solid black 7px;
+    transition: all 1s;
+}
+
+.logo:hover {
+    height: 300px;
+    width: 300px;
+    transform: rotate(360deg);
+}
+
+/* POPUPS */
+
+/* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 260px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+
+}
+
+.popupButton {
+    margin-top: 10px !important;
+}
+
+
+
+/* HEADER */
+
+.welcome {
+    background: black;
+    height: 300px;
+    border-radius: 10px;
+    display: flex;
+    width: 100%;
+}
+
+.welcome h1 {
+    color: white;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    flex: 4;
+    font-family: "Slabo 27px";
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+
+
+.container-bg {
+    width: 70%;
+    max-width: 70%;
+    background-image: url(https://images.unsplash.com/photo-1567197420939-9d6511cdc34a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    height: 700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    background-blend-mode: lighten;
+    display: flex;
+    justify-items: center;
+}
+
+.container-small {
+    width: 500px;
+    background: black;
+    height: 400px;
+    justify-self: center;
+    align-self: center;
+
+}
+
+
+/* FOOTER */
+
+#mainFooter {
+    height: 300px;
+    background: #e3b04b;
+
+}
+
+.footerItems {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+
+.footerItems div {
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+
+
+}
+
+.footerItems div h1 {
+    text-align: center;
+    padding: 15px 70px;
+
+}
+
+.footerItems div i {
+    margin-left: 40%;
+    transition: all 1s;
+}
+
+.footerItems div i:hover {
+    margin-left: 40%;
+    transform: scale(1.2);
+}
+
+footer p {
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+
+}
+
+/* CONTACT PAGE */
+.contactContainer {
+    background: white;
+    height: 500px;
+    padding-top: 40px;
+    text-align: center;
+    border: 10px solid black;
+    border-radius: 20px;
+}
+
+.contactIcons i {
+    color: lightseagreen;
+    padding: 30px 0;
+    margin-right: 35px;
+}
+
+.fruitCard {
+    background: #eadea6 !important;
+    color: black !important;
+    text-align: center;
+    margin: 10px 10px !important;
+
+}
+
+.fruitCard img {
+    width: 100%;
+    height: 250px;
+    border: solid 10px #e3b04b;
+    border-radius: 50%;
+}
+
+.fruitCard a {
+    width: 100%;
+    background: #e3b04b;
+    color: black;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+.fruitCard a:hover {
+    width: 100%;
+    background: black;
+    color: white !important;
+    border: none;
+}
+
+form button {
+    background: black !important;
+    border: none !important;
+    width: 100%;
+
+}
+
+
+form button:hover {
+    background: lightseagreen !important;
+}
+
+/* ABOUT PAGE */
+
+.about-b img {
+    width: 550px;
+    height: 405px;
+    border: 10px solid black;
+    border-radius: 10px;
+}
+
+.about-a {
+    background: black;
+    color: white;
+    padding: 2rem;
+    border: solid 10px white;
+    border-radius: 10px;
+}
+
+.about-a p {
+    text-align: center;
+}
+
+.about-a p a {
+    color: blue;
+
+    font-size: 1.5rem;
+
+}
+
+.about-a h3 {
+    text-align: center;
+    font-family: "Slabo 27px";
+
+}
+
+.about-c {
+    border: 10px solid black;
+    height: 406px;
+    background: white;
+    border-radius: 10px;
+
+}
+
+/* CART PAGE */
+
+.shopHead {
+    background: lightgrey !important;
+    color: black;
+}
+
+.shopHead h1 {
+    font-family: "Slabo 27px" !important;
+    letter-spacing: 3px;
+    color: lightseagreen;
+}
+
+#tableInsert i {
+    color: red;
+    transition: all 0.5s;
+}
+
+#tableInsert i:hover {
+    transform: scale(1.3);
+}
+
+.totalDisplay {
+    color: green;
+    text-decoration: none;
+}

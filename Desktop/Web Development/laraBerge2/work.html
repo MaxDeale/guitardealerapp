@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lara Berge || Freelance Illustrator || Artist</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Prociono|ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="queries.css">
+
+    <script src="https://kit.fontawesome.com/af356b6923.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header id="main-header">
+
+        <div class="nav-container">
+            <nav id="main-nav">
+                <div id="logo-container">
+                    <img src="IMG/castle.jpg" alt="">
+                </div>
+                <div class="logo-container">
+                    <img style="width:300px;" src="IMG/laralog.jpg" alt="">
+                </div>
+                <ul>
+                    <li> <a href="index.html">HOME</a> </li>
+                    <li> <a href="about.html">ABOUT</a> </li>
+                    <li class="selected"> <a href="work.html">WORK</a> </li>
+                    <li> <a href="contact.html">CONTACT</a> </li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <section id="gallery">
+        <div id="smallGallery">
+            <div>
+                <img class="galleryItem" src="./IMG/girl6.jpg" alt="">
+                <img class="galleryItem" src="./IMG/witch.jpg" alt="">
+                <img class="galleryItem" src="./IMG/balloon.jpg" alt="">
+                <img class="galleryItem" src="./IMG/bed.jpg" alt="">
+                <img class="galleryItem" src="./IMG/cart.jpg" alt="">
+                <img class="galleryItem" src="./IMG/shrooms.jpg" alt="">
+                <img class="galleryItem" src="./IMG/catlady.jpg" alt="">
+                <img class="galleryItem" src="./IMG/centar.jpg" alt="">
+                <img class="galleryItem" src="./IMG/christ.jpg" alt="">
+                <img class="galleryItem" src="./IMG/christmas.jpg" alt="">
+                <img class="galleryItem" src="./IMG/circus.jpg" alt="">
+                <img class="galleryItem" src="./IMG/dark.jpg" alt="">
+                <img class="galleryItem" src="./IMG/octo.jpg" alt="">
+                <img class="galleryItem" src="./IMG/drag.jpg" alt="">
+                <img class="galleryItem" src="./IMG/drag2.jpg" alt="">
+                <img class="galleryItem" src="./IMG/kidi4.jpg" alt="">
+                <img class="galleryItem" src="./IMG/elfgirl.jpg" alt="">
+                <img class="galleryItem" src="./IMG/friends.jpg" alt="">
+
+            </div>
+        </div>
+        <div id="galleryDisplay">
+            <img id="mainDisplay" src="./IMG/friends.jpg" alt="nopic">
+        </div>
+
+    </section>
+
+
+
+    <footer id="main-footer">
+        <div class="footer-container py-3">
+
+            <div class="footer-item">
+                <i class="fas fa-2x fa-phone"></i>
+                <h2>Phone</h2>
+                <p>0794230009</p>
+
+            </div>
+            <div class="footer-item">
+                <i class="fas fa-2x fa-envelope"></i>
+                <h2>Email</h2>
+                <p>Laraberge@gmail.com</p>
+
+            </div>
+            <div class="footer-item">
+                <a href=""><i class="fab fa-2x fa-facebook"></i></a>
+                <h2>Facebook</h2>
+                <p>click to view Facebook page</p>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        let smallImgs = document.querySelectorAll(".galleryItem");
+        let imgArr = Array.from(smallImgs);
+        console.log(imgArr)
+        for (var i = 0; i < imgArr.length; i++) {
+            imgArr[i].addEventListener("mouseover", function () {
+                document.getElementById("mainDisplay").src = this.src;
+            });
+        }
+    </script>
+
+</body>
+
+</html>
