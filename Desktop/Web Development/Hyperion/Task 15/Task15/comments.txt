@@ -1,8 +1,0 @@
-
-- data persistence is a problem with local storage so far, as i need to get the cart row from the cart page, and add fruits from he fruit page, etc...
-
--need to store correct total in shop cart page total
-
--need to fade in more info buttons with jquery
-
-- getting NaN for total and undefined for name and price.
