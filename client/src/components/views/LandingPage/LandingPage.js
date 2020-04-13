@@ -8,7 +8,7 @@ import RadioBox from "./Sections/RadioBox";
 import { brands, price } from "./Sections/Datas";
 import SearchFeature from "./Sections/SearchFeature";
 import syles from "../../app.module.css";
-
+//antd card varaibles
 const { Meta } = Card;
 
 function LandingPage() {
@@ -17,12 +17,12 @@ function LandingPage() {
   const [Limit, setLimit] = useState(8);
   const [PostSize, setPostSize] = useState();
   const [SearchTerms, setSearchTerms] = useState("");
-
+  //filter state variables for filtering guitars
   const [Filters, setFilters] = useState({
     brands: [],
     price: [],
   });
-
+  //hook sets the limit and skip variables for loading more items functionality
   useEffect(() => {
     const items = {
       skip: Skip,
@@ -31,7 +31,7 @@ function LandingPage() {
 
     getProducts(items);
   }, []);
-
+  //gets all current items from database, uses state hooks to set data as well as the current post size, for checking if more items should be loaded
   const getProducts = (items) => {
     Axios.post("/api/product/getProducts", items).then((response) => {
       if (response.data.success) {
@@ -46,7 +46,7 @@ function LandingPage() {
       }
     });
   };
-
+  //when the load more button is clicked , the skip and limit values are set and hooks are used to get products again and skip limit is set again
   const onLoadMore = () => {
     let skip = Skip + Limit;
 
@@ -58,7 +58,7 @@ function LandingPage() {
     getProducts(items);
     setSkip(skip);
   };
-
+  //used to render the product cards in rows, uses the image slider component
   const renderCards = Products.map((product, index) => {
     return (
       <Col lg={6} md={8} xs={24}>
@@ -115,6 +115,7 @@ function LandingPage() {
     showFilteredResults(newFilters);
     setFilters(newFilters);
   };
+  //sets the search term values in state and fetches products again based on filter variables
 
   const updateSearchTerms = (newSearchTerm) => {
     const items = {
@@ -167,9 +168,11 @@ function LandingPage() {
           margin: "1rem auto",
         }}
       >
+        {/* using props function to update the search data in search component */}
+
         <SearchFeature refreshFunction={updateSearchTerms} />
       </div>
-
+      {/* if there are no products in the database, the loading spinner will be displayed, else the products will load on cards */}
       {Products.length === 0 ? (
         <div
           style={{

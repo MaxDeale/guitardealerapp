@@ -14,7 +14,7 @@ function CartPage(props) {
   const [Total, setTotal] = useState(0);
   const [ShowTotal, setShowTotal] = useState(false);
   const [ShowSuccess, setShowSuccess] = useState(false);
-
+  //useffect hook sets initial cart items, if the user has items in the cart, the items are added to the cartitems array
   useEffect(() => {
     let cartItems = [];
     if (props.user.userData && props.user.userData.cart) {
@@ -26,7 +26,7 @@ function CartPage(props) {
       }
     }
   }, [props.user.userData]);
-
+  //useffect hook to calculate the total amount using the users cart info
   useEffect(() => {
     if (props.user.cartDetail && props.user.cartDetail.length > 0) {
       calculateTotal(props.user.cartDetail);
@@ -85,13 +85,15 @@ function CartPage(props) {
   };
 
   const transactionError = () => {
-    console.log("Paypal Error");
+    console.log(
+      "There was an error with paypal, your transaction could not be completed"
+    );
   };
 
   const transactionCanceled = () => {
     console.log("Transaction Canceled");
   };
-
+  //using components to show the specific items in the cart using props
   return (
     <div style={{ width: "85%", margin: "8rem auto" }}>
       <h1 style={{ fontFamily: "pacifico", fontSize: "3rem" }}>Cart:</h1>

@@ -18,9 +18,9 @@ export default class Paypal extends React.Component {
     const onError = (err) => {
       console.log("Error!", err);
     };
-
+    //setting variables for currency and env type and total from props
     let env = "sandbox";
-    let currency = "USD";
+    let currency = "ZAR";
     let total = this.props.toPay;
 
     const client = {

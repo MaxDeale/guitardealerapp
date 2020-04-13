@@ -9,7 +9,7 @@ function DetailProductPage(props) {
   const dispatch = useDispatch();
   const productId = props.match.params.productId;
   const [Product, setProduct] = useState([]);
-
+  //using hook to get the specific product from backend to display
   useEffect(() => {
     Axios.get(`/api/product/products_by_id?id=${productId}&type=single`).then(
       (response) => {
@@ -17,7 +17,7 @@ function DetailProductPage(props) {
       }
     );
   }, []);
-
+  //using redux to add the specific item to cart
   const addToCartHandler = (productId) => {
     dispatch(addToCart(productId));
   };

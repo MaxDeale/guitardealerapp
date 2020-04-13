@@ -3,13 +3,13 @@ import Axios from "axios";
 
 function HistoryPage() {
   const [History, setHistory] = useState([]);
-
+  //using hook to retreive specific users history then setting values to state using hook
   useEffect(() => {
     Axios.get("/api/users/getHistory").then((response) => {
       if (response.data.success) {
         setHistory(response.data.history);
       } else {
-        alert("Failed to get History");
+        alert("There was an error fetching the user history");
       }
     });
   }, []);

@@ -29,7 +29,7 @@ const tailFormItemLayout = {
     },
   },
 };
-
+//using formik and moment packages to create register forms
 function RegisterPage(props) {
   const dispatch = useDispatch();
   return (
@@ -52,7 +52,7 @@ function RegisterPage(props) {
           .required("Password is required"),
         confirmPassword: Yup.string()
           .oneOf([Yup.ref("password"), null], "Passwords must match")
-          .required("Confirm Password is required"),
+          .required("Confirming your Password is required"),
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
@@ -81,12 +81,10 @@ function RegisterPage(props) {
           values,
           touched,
           errors,
-          dirty,
           isSubmitting,
           handleChange,
           handleBlur,
           handleSubmit,
-          handleReset,
         } = props;
         return (
           <div className="app">
