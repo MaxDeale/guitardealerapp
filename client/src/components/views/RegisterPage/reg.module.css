@@ -1,0 +1,15 @@
+#but:hover {
+  background: #ff3838 !important;
+  color: white !important;
+}
+
+#mainForm {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#mainForm input {
+  margin-right: 1rem;
+}

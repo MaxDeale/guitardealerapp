@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { loginUser } from "../../../_actions/user_actions";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import styles from "./login.module.css";
 import { Form, Icon, Input, Button, Checkbox, Typography } from "antd";
 import { useDispatch } from "react-redux";
 const { Title } = Typography;
@@ -17,7 +18,7 @@ function LoginPage(props) {
   const handleRememberMe = () => {
     setRememberMe(!rememberMe);
   };
-
+  //using local storage to set remember me value
   const initialEmail = localStorage.getItem("rememberMe")
     ? localStorage.getItem("rememberMe")
     : "";
@@ -38,12 +39,12 @@ function LoginPage(props) {
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
-          let dataToSubmit = {
+          let submitData = {
             email: values.email,
             password: values.password,
           };
-
-          dispatch(loginUser(dataToSubmit))
+          //using redux action and local storage to set the users id as well as remember me fields
+          dispatch(loginUser(submitData))
             .then((response) => {
               if (response.payload.loginSuccess) {
                 window.localStorage.setItem("userId", response.payload.userId);
@@ -71,17 +72,16 @@ function LoginPage(props) {
         }, 500);
       }}
     >
+      {/* login form uses props to store all necessary login variables */}
       {(props) => {
         const {
           values,
           touched,
           errors,
-          dirty,
           isSubmitting,
           handleChange,
           handleBlur,
           handleSubmit,
-          handleReset,
         } = props;
         return (
           <div className="app">
@@ -162,6 +162,7 @@ function LoginPage(props) {
 
               <Form.Item>
                 <Checkbox
+                  style={{ border: "none" }}
                   id="rememberMe"
                   onChange={handleRememberMe}
                   checked={rememberMe}
@@ -180,6 +181,7 @@ function LoginPage(props) {
                     type="primary"
                     htmlType="submit"
                     className="login-form-button"
+                    id={styles.but}
                     style={{
                       minWidth: "100%",
                       background: "black",

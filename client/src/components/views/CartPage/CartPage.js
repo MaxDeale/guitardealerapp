@@ -71,7 +71,7 @@ function CartPage(props) {
       if (response.data.success) {
         setShowSuccess(true);
         setShowTotal(false);
-
+        //using redux actions to set necessary values for cart for a successful purchase
         dispatch(
           onSuccessBuy({
             cart: response.data.cart,
@@ -105,7 +105,7 @@ function CartPage(props) {
 
         {ShowTotal ? (
           <div style={{ marginTop: "3rem" }}>
-            <h2>Total amount: ${Total} </h2>
+            <h2>Total: R{Total} </h2>
           </div>
         ) : ShowSuccess ? (
           <Result status="success" title="Successfully Purchased Items" />
@@ -120,7 +120,7 @@ function CartPage(props) {
           >
             <br />
             <Empty description={false} />
-            <p>No Items In the Cart</p>
+            <p>There are currently no items in your cart...</p>
           </div>
         )}
       </div>

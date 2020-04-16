@@ -13,17 +13,18 @@ import DetailProductPage from "./views/DetailProductPage/DetailProductPage";
 import CartPage from "./views/CartPage/CartPage";
 import HistoryPage from "./views/HistoryPage/HistoryPage";
 import spinner from "./coolSpinner.gif";
-import styles from "./app.module.css";
 
 function App() {
   return (
     <Suspense fallback={<div>{spinner}</div>}>
       <NavBar />
       <div style={{ paddingTop: "75px", minHeight: "calc(100vh - 80px)" }}>
+        {/* using react router to link all components, using auth middleware login and register routes */}
         <Switch>
           <Route exact path="/" component={Auth(LandingPage, null)} />
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
+          {/* sets auth values to true for logged in user in product page */}
           <Route
             exact
             path="/product/upload"

@@ -1,12 +1,13 @@
 import React from "react";
 import moment from "moment";
 import { Formik } from "formik";
+import styles from "./reg.module.css";
 import * as Yup from "yup";
 import { registerUser } from "../../../_actions/user_actions";
 import { useDispatch } from "react-redux";
 
 import { Form, Input, Button } from "antd";
-
+//register form css
 const formItemLayout = {
   labelCol: {
     xs: { span: 24 },
@@ -41,6 +42,7 @@ function RegisterPage(props) {
         password: "",
         confirmPassword: "",
       }}
+      //using formik and yup packages to verify all credentials
       validationSchema={Yup.object().shape({
         name: Yup.string().required("Name is required"),
         lastName: Yup.string().required("Last Name is required"),
@@ -54,17 +56,18 @@ function RegisterPage(props) {
           .oneOf([Yup.ref("password"), null], "Passwords must match")
           .required("Confirming your Password is required"),
       })}
-      onSubmit={(values, { setSubmitting }) => {
+      //when form submits, relevant values are sent to backend using redux
+      onSubmit={(values, { setSubmit }) => {
         setTimeout(() => {
-          let dataToSubmit = {
+          let submitData = {
             email: values.email,
             password: values.password,
             name: values.name,
             lastname: values.lastname,
             image: `http://gravatar.com/avatar/${moment().unix()}?d=identicon`,
           };
-
-          dispatch(registerUser(dataToSubmit)).then((response) => {
+          //registering user with redux
+          dispatch(registerUser(submitData)).then((response) => {
             if (response.payload.success) {
               props.history.push("/login");
             } else {
@@ -72,11 +75,13 @@ function RegisterPage(props) {
             }
           });
 
-          setSubmitting(false);
+          setSubmit(false);
         }, 500);
       }}
     >
+      {/* form uses props to store all user info  */}
       {(props) => {
+        //destructuring relevant values
         const {
           values,
           touched,
@@ -92,8 +97,8 @@ function RegisterPage(props) {
               Sign up
             </h2>
             <Form
+              id={styles.mainForm}
               style={{
-                width: "450px",
                 border: "4px solid black",
                 padding: "2rem",
                 borderRadius: "20px",
@@ -212,6 +217,7 @@ function RegisterPage(props) {
 
               <Form.Item {...tailFormItemLayout}>
                 <Button
+                  id={styles.but}
                   style={{
                     background: "black",
                     border: "none",

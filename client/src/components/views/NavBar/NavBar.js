@@ -17,6 +17,7 @@ function NavBar() {
     setVisible(false);
   };
 
+  //navbar uses antd package for responsive menu button
   return (
     <nav
       className="menu"
