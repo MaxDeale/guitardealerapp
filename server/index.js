@@ -28,21 +28,13 @@ app.use("/api/product", require("./routes/product"));
 
 app.use("/uploads", express.static("uploads"));
 
-app.get("*", (req, res) => {
-  express.static(path.join(__dirname, "../client", "build", "index.html"));
-});
+if (process.env.NODE_ENV === "production") {
+  // Set static folder for client build folder
+  // app.use(express.static("client/build"));
 
-// Serve static assets if in production
-// if (process.env.NODE_ENV === "production") {
-//   // Set static folder for client build folder
-//   // app.use(express.static("client/build"));
-
-//   //  setting index.html as default page to load
-//   app.use(
-//     "*",
-//     express.static(path.join(__dirname, "../client", "build", "index.html"))
-//   );
-// }
+  //  setting index.html as default page to load
+  app.use("*", express.static(path.join(__dirname, "../client", "build")));
+}
 //running server on port 5000
 const port = process.env.PORT || 5000;
 
