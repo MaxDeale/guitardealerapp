@@ -33,15 +33,13 @@ app.get("/", (req, res) => {
 });
 
 // Serve static assets if in production
-
+if (process.env.NODE_ENV === "production") {
   // Set static folder for client build folder
   app.use(express.static("client/build"));
 
   //  setting index.html as default page to load
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
-  });
-
+  app.use("*", express.static(path.join(__dirname, "client", "build")));
+}
 //running saerver on port 5000
 const port = process.env.PORT || 5000;
 
