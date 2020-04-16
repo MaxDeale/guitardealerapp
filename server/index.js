@@ -28,9 +28,9 @@ app.use("/api/product", require("./routes/product"));
 
 app.use("/uploads", express.static("uploads"));
 
-app.get("/", (req, res) => {
-  res.send("HELLO BACKEND");
-});
+// app.get("/", (req, res) => {
+//   res.send("HELLO BACKEND");
+// });
 
 // Serve static assets if in production
 
