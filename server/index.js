@@ -35,7 +35,7 @@ app.use("/uploads", express.static("uploads"));
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
   // Set static folder for client build folder
-  // app.use(express.static("client/build"));
+  app.use(express.static("client/build"));
 
   //  setting index.html as default page to load
   app.use("*", express.static(path.join(__dirname, "../client", "build")));
