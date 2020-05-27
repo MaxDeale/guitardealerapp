@@ -24,6 +24,7 @@ export class UploadProductPage extends Component {
     price: 0,
   };
 
+  //event handlers for uploading new product set state in each one using the event targets
   handleChangeTitle = (event) => {
     this.setState({ title: event.currentTarget.value });
   };
