@@ -1,4 +1,5 @@
 import React from "react";
+//custom paypal button import
 import PaypalExpressBtn from "react-paypal-express-checkout";
 
 export default class Paypal extends React.Component {
@@ -26,7 +27,7 @@ export default class Paypal extends React.Component {
     const client = {
       sandbox:
         "AelMA7rUdxce2INjEX1y9KQ47L4J8Idv7rIROe3if2vnMqsIkIz5FFUvA5g-cZiRCnRl3X2EAZljDxWw",
-      production: "YOUR-PRODUCTION-APP-ID",
+      production: "77454bbaaedca38800dba07674dc0fc2",
     };
 
     return (
