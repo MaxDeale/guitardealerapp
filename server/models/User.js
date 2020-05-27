@@ -42,6 +42,8 @@ const userSchema = mongoose.Schema({
   },
 });
 
+//before the user is saved to the db, , if the password was modified a new salt batch is generated
+
 userSchema.pre("save", function (next) {
   var user = this;
 
@@ -49,7 +51,7 @@ userSchema.pre("save", function (next) {
     console.log("password changed");
     bcrypt.genSalt(saltRounds, function (err, salt) {
       if (err) return next(err);
-
+      //hashing new user password using bcrypt package
       bcrypt.hash(user.password, salt, function (err, hash) {
         if (err) return next(err);
         user.password = hash;
@@ -72,7 +74,7 @@ userSchema.methods.generateToken = function (cb) {
   var user = this;
   var token = jwt.sign(user._id.toHexString(), "secret");
 
-  user.tokenExp = 9999;
+  user.tokenExp = 99999;
   user.token = token;
   user.save(function (err, user) {
     if (err) return cb(err);

@@ -7,7 +7,6 @@ import spinner from "../../coolSpinner.gif";
 import RadioBox from "./Sections/RadioBox";
 import { brands, price } from "./Sections/Datas";
 import SearchFeature from "./Sections/SearchFeature";
-import syles from "../../app.module.css";
 //antd card varaibles
 const { Meta } = Card;
 
@@ -59,7 +58,7 @@ function LandingPage() {
     setSkip(skip);
   };
   //used to render the product cards in rows, uses the image slider component
-  const renderCards = Products.map((product, index) => {
+  const renderCards = Products.map((product) => {
     return (
       <Col lg={6} md={8} xs={24}>
         <Card

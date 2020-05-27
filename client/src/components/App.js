@@ -30,6 +30,7 @@ function App() {
             path="/product/upload"
             component={Auth(UploadProductPage, true)}
           />
+
           <Route
             exact
             path="/product/:productId"

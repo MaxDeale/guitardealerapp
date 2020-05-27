@@ -2,3 +2,7 @@
   background: #ff3838 !important;
   color: white !important;
 }
+
+#input:focus {
+  outline-color: yellow !important;
+}
